@@ -1,0 +1,47 @@
+1) PWD - Present working directory. || UNI(unique resource identifier) || URL(uniform resource locator).
+2) MKDIR (directory_name) - Make directory. || mkdir a b c d (4 directory created) || mkdir -p fd1/fd2 (nested 				    directory).
+3) LS - List(show all directories).
+4) RMDIR - Remove directory.
+5) CD - Change directory. || cd .. -> previous directory || cd -> Root directory.
+6) RM -R -> Remove Empty Directory
+7) RM -RV(V-VERBOSE) -> Remove Nested Directories
+Ex:- 	removed directory 'internship/Day_1/linux'
+	removed directory 'internship/Day_1'
+	removed directory 'internship/' .
+8) TOUCH - create file
+9) RM - delete file.
+10) vi - vi edittor(notepad) || i (insert, then write whatever) || esc (to escape(out) the insert mode) || shift+: 	(then wq to save the text in a file and also exit to the file). || vi (filename) - also create file and open 	in vi edittor.
+11) cat (filename) - to see content of file.
+12) cp file1_(data) file2_(copy content in this file from file1) Ex:- cp demo.txt abc.txt
+13) cp filename directoryname - to copy file in a directory. Ex:- cp demo.txt Demo/
+14) mv filename directory - to move a file in a directory. Ex:- mv new.txt Demo/
+14) apt - aptitude use to update or config libraries.
+15) sudo - super user do 
+16) sudo -i - go to the root directory. Ex:-  sudo -i , root@cloudshell:~$ su devakaushik0000
+17) su (oldusername) - return to user. Ex:- su devakaushik0000, devakaushik0000@cloudshell:/root$ 
+18) sudo adduser username - ex ram(username) -> add new user. Ex:- sudo adduser ram.
+
+USER,GROUP,OTHERS - IDENTITES
+PERMISSIONS - READ/WRITE/EXECUTE
+19) LS - L -> TO CHECK PERMISSIONS.
+	Ex:- -rw-rw-r-- 1 devakaushik0000 devakaushik0000   11 Jul 10 04:55 abc.txt
+drwxrwxr-x 2 devakaushik0000 devakaushik0000 4096 Jul 10 05:00 Demo
+-rw-rw-r-- 1 devakaushik0000 devakaushik0000   11 Jul 10 04:40 demo.txt
+-rw-r--r-- 1 devakaushik0000 devakaushik0000  913 Jul 10 05:52 README-cloudshell.txt
+-rw-rw-r-- 1 devakaushik0000 devakaushik0000    4 Jul 10 04:49 touch
+-rw-rw-r-- 1 devakaushik0000 devakaushik0000    0 Jul 10 05:03 user.txt
+-rw-rw-r-- 1 devakaushik0000 devakaushik0000    0 Jul 10 04:49 vi
+
+20) chmod g+w Demo/ - to give permission Demo directory. Ex:- chmod o+w Demo/ -> it give other permission to write .
+21) chmod u-r Demo/ - same previous but it remove permission.
+
+THERE ARE TWO TYPES OF GIVING PERMISSIONS LIKE (1)SYMBOLIC, (2) NUMERIC.
+22) chmod 777 Demo/ -> THIS IS NUMERIC.
+23) sudo apt install figlet - install it first to use figlet.
+24) figlet Dev(write anything you want to print) - Ex:-   
+ ____             
+|  _ \  _____   __
+| | | |/ _ \ \ / /
+| |_| |  __/\ V / 
+|____/ \___| \_/  
+                   
