@@ -1,29 +1,46 @@
 1) PWD - Present working directory. || UNI(unique resource identifier) || URL(uniform resource locator).
-2) MKDIR (directory_name) - Make directory. || mkdir a b c d (4 directory created) || mkdir -p fd1/fd2 (nested 				    directory).
+
+2) MKDIR (directory_name) - Make directory. || mkdir a b c d (4 directory created) || mkdir -p fd1/fd2 (nested directory).
+
 3) LS - List(show all directories).
+
 4) RMDIR - Remove directory.
+
 5) CD - Change directory. || cd .. -> previous directory || cd -> Root directory.
+
 6) RM -R -> Remove Empty Directory
+
 7) RM -RV(V-VERBOSE) -> Remove Nested Directories
 Ex:- 	removed directory 'internship/Day_1/linux'
 	removed directory 'internship/Day_1'
 	removed directory 'internship/' .
+
 8) TOUCH - create file
+
 9) RM - delete file.
+
 10) vi - vi edittor(notepad) || i (insert, then write whatever) || esc (to escape(out) the insert mode) || shift+: 	(then wq to save the text in a file and also exit to the file). || vi (filename) - also create file and open 	in vi edittor.
+
 11) cat (filename) - to see content of file.
+
 12) cp file1_(data) file2_(copy content in this file from file1) Ex:- cp demo.txt abc.txt
+
 13) cp filename directoryname - to copy file in a directory. Ex:- cp demo.txt Demo/
+
 14) mv filename directory - to move a file in a directory. Ex:- mv new.txt Demo/
+
 14) apt - aptitude use to update or config libraries.
+
 15) sudo - super user do 
+
 16) sudo -i - go to the root directory. Ex:-  sudo -i , root@cloudshell:~$ su devakaushik0000
+
 17) su (oldusername) - return to user. Ex:- su devakaushik0000, devakaushik0000@cloudshell:/root$ 
+
 18) sudo adduser username - ex ram(username) -> add new user. Ex:- sudo adduser ram.
 
 USER,GROUP,OTHERS - IDENTITES
 PERMISSIONS - READ/WRITE/EXECUTE
-
 
 19) LS - L -> TO CHECK PERMISSIONS.
 	Ex:- -rw-rw-r-- 1 devakaushik0000 devakaushik0000   11 Jul 10 04:55 abc.txt
@@ -35,11 +52,14 @@ drwxrwxr-x 2 devakaushik0000 devakaushik0000 4096 Jul 10 05:00 Demo
 -rw-rw-r-- 1 devakaushik0000 devakaushik0000    0 Jul 10 04:49 vi
 
 20) chmod g+w Demo/ - to give permission Demo directory. Ex:- chmod o+w Demo/ -> it give other permission to write .
+
 21) chmod u-r Demo/ - same previous but it remove permission.
 
 THERE ARE TWO TYPES OF GIVING PERMISSIONS LIKE (1)SYMBOLIC, (2) NUMERIC.
 22) chmod 777 Demo/ -> THIS IS NUMERIC.
+
 23) sudo apt install figlet - install it first to use figlet.
+
 24) figlet Dev(write anything you want to print) - Ex:-   
  ____             
 |  _ \  _____   __
@@ -48,9 +68,13 @@ THERE ARE TWO TYPES OF GIVING PERMISSIONS LIKE (1)SYMBOLIC, (2) NUMERIC.
 |____/ \___| \_/  
                    
 25) sudo apt install zip - to use zip file.
+
 26)  sudo apt install unzip.
+
 27) zip -v poornima1.zip poornima1.
+
 28)  unzip poornima1.zip poornima1.
+
 29)  top . Ex:-  top - 09:05:58 up 35 min,  0 users,  load average: 0.00, 0.00, 0.00
 Tasks:   5 total,   1 running,   4 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
@@ -72,9 +96,12 @@ Ex:- htop
 Ex:- atop
 
 32) cat /etc/passwd - to check all users of pc.
+
 33) cat /etc/passwd | wc -l - it also same as previous it shows users in numeric data.
+
 34) grep 'Buddy' demo.txt - to check content in file or not.
 Ex:- Hello Buddy! (Here Buddy appear in RED colour).
+
 35)  grep d *.txt - it doesn't required file name.
 Ex:- Hello Buddy!
 I m dev,
