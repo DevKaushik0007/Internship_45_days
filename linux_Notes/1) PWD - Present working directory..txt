@@ -23,6 +23,8 @@ Ex:- 	removed directory 'internship/Day_1/linux'
 
 USER,GROUP,OTHERS - IDENTITES
 PERMISSIONS - READ/WRITE/EXECUTE
+
+
 19) LS - L -> TO CHECK PERMISSIONS.
 	Ex:- -rw-rw-r-- 1 devakaushik0000 devakaushik0000   11 Jul 10 04:55 abc.txt
 drwxrwxr-x 2 devakaushik0000 devakaushik0000 4096 Jul 10 05:00 Demo
@@ -45,3 +47,47 @@ THERE ARE TWO TYPES OF GIVING PERMISSIONS LIKE (1)SYMBOLIC, (2) NUMERIC.
 | |_| |  __/\ V / 
 |____/ \___| \_/  
                    
+25) sudo apt install zip - to use zip file.
+26)  sudo apt install unzip.
+27) zip -v poornima1.zip poornima1.
+28)  unzip poornima1.zip poornima1.
+29)  top . Ex:-  top - 09:05:58 up 35 min,  0 users,  load average: 0.00, 0.00, 0.00
+Tasks:   5 total,   1 running,   4 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   2847.7 total,   2595.3 free,    101.9 used,    150.4 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   2603.8 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    1 root      20   0    1824   1196   1108 S   0.0   0.0   0:00.01 init
+   13 root      20   0    2172    372      0 S   0.0   0.0   0:00.00 init
+   14 root      20   0    2180    372      0 S   0.0   0.0   0:00.14 init
+   15 dev_kau+  20   0    6168   5384   3572 S   0.0   0.2   0:00.18 bash
+  335 dev_kau+  20   0    7788   3228   2864 R   0.0   0.1   0:00.01 top
+
+
+30) sudo apt install htop . 
+Ex:- htop
+
+31) sudo apt install atop.
+Ex:- atop
+
+32) cat /etc/passwd - to check all users of pc.
+33) cat /etc/passwd | wc -l - it also same as previous it shows users in numeric data.
+34) grep 'Buddy' demo.txt - to check content in file or not.
+Ex:- Hello Buddy! (Here Buddy appear in RED colour).
+35)  grep d *.txt - it doesn't required file name.
+Ex:- Hello Buddy!
+I m dev,
+(and the content in file is - Hello Buddy!
+I m dev,
+How are you.).
+
+36)  echo dev - to print content.
+
+37)  echo "dev" | tr a-z A-z - it convert small to big characters.
+Ex:- DEV
+
+38) echo "Dev" | tr Dev o - to change any character/word.
+Ex:- ooo
+
+39) 
