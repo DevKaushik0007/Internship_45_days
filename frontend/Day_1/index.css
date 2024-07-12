@@ -1,0 +1,9 @@
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+img{
+    cursor: pointer;
+    height:300px;
+    width:480px;
+}
