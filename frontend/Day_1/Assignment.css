@@ -1,0 +1,19 @@
+.tb{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+.ul{
+    list-style-type: disc;
+}
+.Time_Table{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
