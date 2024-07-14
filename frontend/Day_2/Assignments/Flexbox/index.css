@@ -1,8 +1,33 @@
-.container{
-    display: flex;
+*{
+    margin: 0;
+    padding: 0;
 }
-.box{
+.container{
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+.box1{
+    background-color: orange;
+    height: 30vh;
+    width: 100%;
+}
+.box2{
+    display: flex;
+    background-color: white;
+    height: 40vh;
+    width: 100%;
+}
+.box4{
     background-color: red;
-    height: 200px;
+    width: 70%;
+}
+
+.box5{
+    width: 30%;
+    background-color: royalblue;
+}
+.box3{
+    background-color: green;
+    height: 30vh;
     width: 100%;
 }
