@@ -1,0 +1,53 @@
+1) db.<collectionname>.drop()  //  to delete the collection.
+
+2) show collections  //  to show all collections.
+
+3) use apple  // switch db (use <db name>)
+
+4) show dbs // show all db.
+
+EX: Atlas atlas-84ix2f-shard-0 [primary] apple> show dbs
+sample_mflix  110.91 MiB
+admin         340.00 KiB
+local          18.16 GiB  
+
+6) db.<collectionname>.find() // show all datas in collection.
+
+7) db.user.find({gender:"Male"})  // it shows all Male data in user collection.
+
+8)  db.user.find({age:28,city:"Hyderabad"}) // it show specific data according to condition.
+
+9) operators( $or, $and, $nin, $ne $exits, $lt, $in, $gt, $eq, $lte, etc ).
+
+10) db.user.find({role:"customer",lastName:/karamchandani/}).count() , //  / is used to check character 
+
+11)  db.user.find({role:"customer",username:/^A/}).count()  // it shows all name start from A.
+
+12) db.user.find({username:/ar/}) // it shows all data with ar name in between.
+
+13) db.user.find({username:/^R/}) // it shows first word R.
+
+14) db.user.find({skills:"Python",skills:"Java"}) // If key is same then or otherwise and.  
+
+15)  db.user.find({$and:[{skills:"Python"},{skills:"Java"}]})
+
+16)  db.user.find({skills:{$all:["Python","Java"]}}) // this is by $all  
+
+17) db.user.find({skills:"Java",skills:{$nin:["Spring","Hybernate"]}})  // it shows java without spring and hibernate and also some data without spring and hybernate.
+
+18)  db.user.find({skills:{$in:["Java"],$nin:["Spring","Hybernate"]}}) // it shows java without spring and hibernate
+
+19)  db.user.find({username:/a$/})  // it shows data with username ends withs a
+
+20) db.user.find({"skills.3":{$exists:true}}) // it shows only atleast 3 skills.
+
+21) db.user.find({"skills.3":{$exists:false}})  // it shows atmost 3 skills.
+
+22) db.user.find({useremail:{$not:/yahoo.com$/}})  // it shows all emails but not shows with yahoo.com
+
+23)  db.user.find({role:"admin","skills.0":{$exists:true}})  // it shows all data with role is admin and atleast has one skill.
+
+24)  db.user.find({role:"admin",useremail:/regexsoftware.com/})  // it shows all data contains regexsoftware.com email.
+
+25)  
+	
