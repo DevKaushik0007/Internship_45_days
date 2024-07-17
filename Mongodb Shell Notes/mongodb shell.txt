@@ -1,3 +1,5 @@
+// Vertical Scaling
+
 1) db.<collectionname>.drop()  //  to delete the collection.
 
 2) show collections  //  to show all collections.
@@ -17,7 +19,7 @@ local          18.16 GiB
 
 8)  db.user.find({age:28,city:"Hyderabad"}) // it show specific data according to condition.
 
-9) operators( $or, $and, $nin, $ne $exits, $lt, $in, $gt, $eq, $lte, etc ).
+9) operators( $or, $and, $nin, $ne $exits, $lt, $in, $gt, $eq, $lte,$gte etc ).
 
 10) db.user.find({role:"customer",lastName:/karamchandani/}).count() , //  / is used to check character 
 
@@ -51,3 +53,216 @@ local          18.16 GiB
 
 25)  
 	
+
+// Horizontal scaling.
+// operation pipeline
+-> $match,$group,$unwind,$project    
+
+db.user.aggregate([])
+
+1) 
+
+[
+  {
+    $match: {
+      salary:{$gte:50000,$lte:500000}
+    }
+  }
+]
+
+2) 
+
+[
+  {
+    $match: {
+     gender:"Female",
+      city:"Goa",
+      age:{$gte:24},
+      skills:{$all:["Python","C++"]}
+    }
+  }
+]
+
+3)
+
+[
+  {
+    $match: {
+    
+      city:{$in:["New Delhi","Mumbai"]}
+     
+    }
+  }
+]
+
+4) 
+
+[
+  {
+    $match: {
+      city: "New Delhi"
+    }
+  },
+  {
+  $count:"total user from delhi",
+  }
+    ]
+ // it count users ex. 
+  "total user from delhi": 3
+   
+5)
+
+[
+  {
+    $group:{
+      _id:"$city",
+      maxSal:{$max:"$salary"},
+      avgSal:{$avg:"$salary"},
+      minSal:{$min:"$salary"}
+    }
+  }
+    ]
+
+6)
+
+[
+  {
+    $group:{
+      _id:"$gender",
+      
+      avgAge:{$avg:"$age"},
+     
+    }
+  }
+    ]
+
+7)
+
+[
+  {
+    $group:{
+      _id:["$gender","$city"],
+      
+      
+     
+    }
+  }
+    ]
+
+8)
+
+[
+  {
+    $group:{
+      // _id:["$gender","$city"],
+      // totalSal:{$sum:"$salary"}
+      // maxSal:{$max:"$salary"}
+      
+      
+     
+    }
+  }
+    ]
+
+9)
+
+[
+  {
+    
+     $unwind:"$skills"
+  },
+  {
+    $group:{
+      _id:"$skills",
+      totalusers:{$sum:1}
+    }
+  }
+  
+    ]
+// it break the skills and then group them and also find total users bcoz skills can't group directly bcoz it is in array format.   
+
+10)
+
+[
+  {
+    
+     $unwind:"$skills"
+  },
+  {
+    $group:{
+      _id:"$skills",
+      totalusers:{$sum:1}
+    
+    }
+  },
+  {
+    $project:{
+      skills:"$_id",
+      totalusers:1
+    }
+ 
+  },
+  {
+    $match:{
+      totalusers:{$gte:2}
+    }
+  }
+]
+
+11)
+
+[
+  {
+    
+     $unwind:"$skills"
+  },
+  {
+    $group:{
+      _id:"$skills",
+      totalusers:{$sum:1},
+      // avgUser:{$avg:"$skills"}
+    
+    }
+  },
+  {
+    $project:{
+      skills:"$_id",
+      totalusers:1
+    }
+ 
+  },
+  {
+    $group{
+    _id:"$skills",
+        avgUser:{$avg}
+  }
+  },
+  {
+    $match:{
+      totalusers:{$gte:2},
+    }
+  }
+]
+
+12)
+
+[
+  {
+    $addFields: {
+      skillSize:{$size:"$skills"}
+    }
+  }
+]
+
+// here each user skill count.
+
+13)
+
+ {
+    $sort: {
+      usercount: -1
+    }
+  },
+  {
+    $limit: 5
+  }
