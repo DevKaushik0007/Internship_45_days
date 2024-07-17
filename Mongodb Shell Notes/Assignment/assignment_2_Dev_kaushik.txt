@@ -1,0 +1,18 @@
+2. Group users by role and gender, and calculate the total salary for each subgroup.
+
+[
+  {
+    $group:{
+    _id:{role:"$role",gender:"$gender"},
+      totalSal:{$sum :"$salary"}
+      
+    }
+  },
+  {
+    $project: {
+      role:"$_id.role",
+      gender:"$_id.gender",
+      totalSal:1
+    }
+  }
+]

@@ -119,7 +119,9 @@
 --> db.user.find({ role: "admin", skills: { $all: ["Java", "JavaScript"] } })
 
 41) Find the average age of users.
---> 
+--> [{ $group: {_id: null, avgAge:{$avg:"$age"} } },
+ { $project:{ _id:0, avgAge:1 } } ]
+ 
 42) Find all female users from Jaipur who know Python.
 --> db.user.find({ gender: "Female", city: "Jaipur", skills: "Python" })
 
@@ -130,9 +132,12 @@
 --> db.user.find({ city: { $in: ["New Delhi", "Mumbai"] } })
 
 45) Find all users who have the same last name.
---> 
+--> [ { $group: { _id: "$lastName", usersCount: { $sum: 1 } } },
+  { $project: {_id:0, lastName:"$_id", usersCount:1 } } ]
+
 46) Find the count of users in each city.
---> 
+--> [ { $group: { _id: "$city", count: { $sum: 1 } } } ]
+
 47) How many users are from New Delhi?
 --> db.user.find({ city: "New Delhi" }).count()
 
