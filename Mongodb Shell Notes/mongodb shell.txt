@@ -266,3 +266,19 @@ db.user.aggregate([])
   {
     $limit: 5
   }
+  
+  14)
+
+  [
+  {
+    $unwind:"$skills"
+  },
+  
+  {
+    $group: {
+      _id:"$skills",
+      user:{$push:"$username"}
+    }
+    }
+  
+]
