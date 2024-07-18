@@ -400,6 +400,46 @@
 19)
 --> 
 
+[
+  
+  {
+    $group: {
+      _id:null,
+      avg_salary:{
+        $avg:"$salary"},
+      users:{$push:"$$ROOT"}
+      }
+  },
+  {
+    $unwind:"$users"
+  },
+  {
+    $addFields: {
+      "users.avg_salary":"$avg_salary"  
+  }},
+ {
+   $replaceRoot: {
+     newRoot: "$users"
+   }
+ } ,
+    {
+      $match:{
+        $expr:{$gt:["$salary","$avg_salary"]}
+      }
+    },
+    {
+      $group: {
+        _id: "$gender",
+        totaluser:{$sum:1},
+        users: {$push:{
+          name:"$username"
+        }}
+      }
+    }
+  ]
+  
+
+
 20) Group users by skills and determine the maximum age of users with each skill.
 --> [
   {
@@ -422,3 +462,225 @@
 
 
 21)
+--> [
+  {
+    $addFields: {
+      totalskills:{$size:"$skills"}
+      
+    }
+  },
+  {
+    $match: {
+      totalskills:{$gt:1}
+    }
+  },
+  {
+    $group:{
+
+    _id:{role:"$role",city:"$city"},
+      totalUsers:{$sum:1}
+    }
+  },
+  {
+  $project:{
+    _id:0,
+    role:"$_id.role",
+    city:"$_id.city",
+    totalUsers:1
+  }
+  }
+]
+
+22)
+--> [
+  {
+    $match:{
+      salary:{$lt:500000}
+    }
+  },
+  {
+    $group:{
+      _id:{gender:"$gender",city:"$city"},
+      totalUsers:{$sum:1}
+    }
+  },
+  {
+    $project:{
+      _id:0,
+      gender:"$_id.gender",
+      city:"$_id.city",
+      totalUsers:1
+    }
+  }
+]
+
+23)
+--> [
+  {
+    $match:{
+      role:"customer"
+    }
+  },
+  {
+    $group:{
+      _id:"$age",
+      avgSal:{$avg:"$salary"}
+    }
+  },
+  {
+    $project:{
+      _id:0,
+      age:"$_id",
+      avgSal:1
+    }
+  }
+]
+
+24)
+--> [
+  {
+    $match:{
+      skills:"Java"
+    }
+  },
+  {
+    $group:{
+      _id:"$role",
+      avgSal:{$avg:"$salary"}
+    }
+  },
+  {
+    $project:{
+      _id:0,
+      role:"$_id",
+      avgSal:1
+    }
+  }
+]
+
+25)
+--> [
+  {
+    $match: {
+      role:"admin"
+    }
+  },
+  {
+    $group: {
+      _id: "$city",
+      totalusers:{$sum:1}
+    }
+  },
+  {
+    $project: {
+      _id:0,
+      city:"$_id",
+      totalusers:1
+    }
+  }
+]
+
+26)
+-->
+[
+  {
+    $match: {
+      skills: { $all: ["Java", "Python"] }
+    }
+  },
+  {
+    $group: {
+      _id: "$gender",
+      totalUsers: { $sum: 1 }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      gender: "$_id",
+      totalUsers: 1
+    }
+  }
+]
+
+27)
+-->
+[
+  {
+    $match: {
+      role:"customer"
+    }
+  },
+  {
+    $group: {
+      _id: "$age",
+      totaluserscount:{$sum:1}
+    }
+  },
+  {
+    $project:{
+      _id:0,
+      age:"$_id",
+      totaluserscount:1
+    }
+
+  }
+]
+
+28)
+-->
+[
+  {
+    $match: {
+      skills:"DBMS"
+    }
+  },
+  {
+    $group: {
+      _id: {role:"$role",city:"$city"} ,
+        totalusers:{$sum:1}
+    }
+  },
+  {
+    $project: {
+      _id:0,
+      
+      role:"$_id.role",
+      city:"$_id.city",
+      totaluserscount:1
+      
+    }
+  }
+]
+
+29)
+-->
+[
+  {
+    $addFields: {
+      skills:{$size:"$skills" }
+    }
+  },
+  {
+    $match: {
+      skills:{$gt:3}
+    }
+  },
+  {
+    $group: {
+      _id: "$gender",
+      totalusers:{$sum:1}
+      
+    }
+  },
+  {
+    $project: {
+      _id:0,
+      gender:"$_id",
+      totalusers:1
+    }
+  }
+]
+
+30)
+-->
