@@ -1,7 +1,7 @@
 //let var and const
 // these are the three types to declare any variable in javascript
-// var: function scoped mutable
-// let: block scoped and mutable
+// var: function scoped mutable,it reasign and redeclared.
+// let: block scoped and mutable,it dont reasign by let keyword but witout write let if we redclare again only by variable name bcoz bydefault it is var and in var it supported.
 //  const: block scoped and immutable
 
 // mutable and immutable
@@ -16,5 +16,7 @@
 // what is block scope?
 // block scope is the scope of a variable that is declared inside a block of code.
 // curly brackets creates block
-var a = 5;
+// console.log(a);
+let a;
+// a=window.prompt("enter a number");
 console.log(a);

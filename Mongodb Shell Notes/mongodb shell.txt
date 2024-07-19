@@ -1,4 +1,5 @@
-// Vertical Scaling
+// Vertical Scaling.
+//use kaggle.com for Datasets.
 
 1) db.<collectionname>.drop()  //  to delete the collection.
 
