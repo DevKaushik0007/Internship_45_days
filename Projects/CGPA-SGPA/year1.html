@@ -4,82 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGPA Calculator</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="year1.css">
+
+
 </head>
 <body>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://ideogram.ai/assets/progressive-image/balanced/response/qIFC5TgdRp6_xTFQtsFwyw" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/Projects/CGPA-SGPA/year1.html">Year 1</a></li>
+                <li><a href="/Projects/CGPA-SGPA/year2.html">Year 2</a></li>
+                <li><a href="#year3">Year 3</a></li>
+                <li><a href="#year4">Year 4</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Your existing content goes here -->
+    
+    </body>
+    
+    <!-- <div class="nav">
+        <ul>
+        <span style="text-align: center; margin: 50px;font-size: 30px;">CGPA Calculator </span>
+        <li><a href="#">Year-4</a></li>
+        <li><a href="#">Year-3</a></li>
+        <li><a href="#">Year-2</a></li>
+        <li><a class="active" href="#">Year-1</a></li>
+      </ul>
+    </div> -->
     <h1>CGPA Calculator</h1>
     <div class="container">
         <div class="left">
             <h2>SEM-1</h2>
-            <label for="math">Engineering Mathematics-1</label>
+            <label for="math1">Engineering Mathematics-1</label>
             <input type="text" class="input" placeholder="Enter Grade" id="math1">
-            
             <label for="chemistry">Engineering Chemistry</label>
             <input type="text" class="input" placeholder="Enter Grade" id="chemistry">
-            
             <label for="hv">Human Values</label>
             <input type="text" class="input" placeholder="Enter Grade" id="hv">
-            
             <label for="pps">PPS</label>
             <input type="text" class="input" placeholder="Enter Grade" id="pps">
-            
             <label for="bee">BEE</label>
             <input type="text" class="input" placeholder="Enter Grade" id="bee">
             <label for="ec-lab">EC-Lab</label>
             <input type="text" class="input" placeholder="Enter Grade" id="ec-lab">
-            
             <label for="hv-lab">HV-Lab</label>
             <input type="text" class="input" placeholder="Enter Grade" id="hv-lab">
-            
             <label for="cp-lab">CP-Lab</label>
             <input type="text" class="input" placeholder="Enter Grade" id="cp-lab">
-            
             <label for="bee-lab">BEE-Lab</label>
             <input type="text" class="input" placeholder="Enter Grade" id="bee-lab">
-            
             <label for="caeg">CAEG</label>
             <input type="text" class="input" placeholder="Enter Grade" id="caeg">
-            
-            <label for="sodeca">SODECA</label>
+            <label for="sodeca1">SODECA</label>
             <input type="text" class="input" placeholder="Enter Grade" id="sodeca1">
+            <div id="result1"></div>
+            <button id="submit-sem1">Calculate SEM-1 SGPA</button>
         </div>
         <div class="right">
             <h2>SEM-2</h2>
-            <label for="math">Engineering Mathematics-2</label>
+            <label for="math2">Engineering Mathematics-2</label>
             <input type="text" class="input" placeholder="Enter Grade" id="math2">
-            
-            <label for="chemistry">Engineering Physics</label>
+            <label for="physics">Engineering Physics</label>
             <input type="text" class="input" placeholder="Enter Grade" id="physics">
-            
-            <label for="hv">Communication Skills</label>
+            <label for="cs">Communication Skills</label>
             <input type="text" class="input" placeholder="Enter Grade" id="cs">
-            
-            <label for="pps">BME</label>
+            <label for="bme">BME</label>
             <input type="text" class="input" placeholder="Enter Grade" id="bme">
-            
-            <label for="bee">BCE</label>
+            <label for="bce">BCE</label>
             <input type="text" class="input" placeholder="Enter Grade" id="bce">
-            <label for="ec-lab">EP-Lab</label>
+            <label for="ep-lab">EP-Lab</label>
             <input type="text" class="input" placeholder="Enter Grade" id="ep-lab">
-            
-            <label for="hv-lab">Language-Lab</label>
+            <label for="l-lab">Language-Lab</label>
             <input type="text" class="input" placeholder="Enter Grade" id="l-lab">
-            
-            <label for="cp-lab">Manufacturing Practices workshop</label>
+            <label for="mpw">Manufacturing Practices workshop</label>
             <input type="text" class="input" placeholder="Enter Grade" id="mpw">
-            
-            <label for="bee-lab">BCE-Lab</label>
+            <label for="bce-lab">BCE-Lab</label>
             <input type="text" class="input" placeholder="Enter Grade" id="bce-lab">
-            
-            <label for="caeg">CAMD</label>
+            <label for="camd">CAMD</label>
             <input type="text" class="input" placeholder="Enter Grade" id="camd">
-            
-            <label for="sodeca">SODECA</label>
+            <label for="sodeca2">SODECA</label>
             <input type="text" class="input" placeholder="Enter Grade" id="sodeca2">
+            <div id="result2"></div>
+            <button id="submit-sem2">Calculate SEM-2 SGPA</button>
+
         </div>
     </div>
+    <button id="submit-overall" class="submit-overall">Calculate Overall CGPA</button>
     <div id="result"></div>
-    <button id="submit">Submit</button>
-    <script src="index.js"></script>
+    <script src="year1.js"></script>
 </body>
 </html>
