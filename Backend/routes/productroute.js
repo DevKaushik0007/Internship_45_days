@@ -1,5 +1,15 @@
 const express = require("express");
 const getproductController = require("../controllers/products/getproductController");
 const router = express.Router();
-router.get("/getproducts", getproductController);
+router.get("/", getproductController);
+router.get("/id/:id", getproductController);
+router.get("/category/:category", getproductController);
+router.get("/sub_category/:sub_category", getproductController);
+router.get("/name/:name", getproductController);
+router.get("/random", getproductController);
+router.get("/top-rated", getproductController);
+router.get("/lowtohigh", getproductController);
+router.get("/category/:category/lowtohigh", getproductController);
+router.get("/category/:category/hightolow", getproductController);
+router.get("/hightolow", getproductController);
 module.exports = router;
