@@ -4,27 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGPA Calculator</title>
-    <link rel="stylesheet" href="year2.css">
+    <!-- <link rel="stylesheet" href="year2.css"> -->
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path-to-your-image.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* ensures it stays behind other content */
+}
+.full-screen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* ensures it stays behind other content */
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a slight shadow for better text visibility */
+    z-index: 1000; /* Ensure navbar stays on top */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-left {
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.navbar-logo {
+    height: 40px; /* Adjust the size of the logo as needed */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333; /* Dark text color for contrast */
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #000; /* Slightly darker text color on hover */
+}
+
+.content {
+    padding-top: 60px; /* Ensure content is not hidden behind the fixed navbar */
+    text-align: center;
+    padding: 20px;
+}
+
+    </style>
 </head>
 <body>
-
-      
-    <nav class="navbar">
-        <div class="logo">
-            <img src="https://ideogram.ai/assets/progressive-image/balanced/response/qIFC5TgdRp6_xTFQtsFwyw" alt="Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="/Projects/CGPA-SGPA/year1.html">Year 1</a></li>
-            <li><a href="#">Year 2</a></li>
-            <li><a href="/Projects/CGPA-SGPA/year3.html">Year 3</a></li>
-            <li><a href="/Projects/CGPA-SGPA/year4.html">Year 4</a></li>
-        </ul>
-    </nav>
-    
+    <body>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img src="path-to-your-image.jpg" alt="Logo" class="navbar-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/Projects/CGPA-SGPA/year1.html">Year 1</a></li>
+                <li><a href="/Projects/CGPA-SGPA/year2.html">Year 2</a></li>
+                <li><a href="/Projects/CGPA-SGPA/year3.html">Year 3</a></li>
+                <li><a href="#">Year 4</a></li>
+            </ul>
+        </nav>
         
         <!-- Your existing content goes here -->
-
     
+    </body>
+    <img src="/Projects/CGPA-SGPA/pixelcut-export.jpeg" class="full-screen-image" alt="Full Screen Image">
+
     <!-- <div class="nav">
         <ul>
         <span style="text-align: center; margin: 50px;font-size: 30px;">CGPA Calculator </span>
@@ -33,8 +109,8 @@
         <li><a href="#">Year-2</a></li>
         <li><a class="active" href="#">Year-1</a></li>
       </ul>
-    </div>  -->
-    <h1>CGPA Calculator</h1>
+    </div> -->
+    <!-- <h1>CGPA Calculator</h1>
     <div class="container">
         <div class="left">
             <h2>SEM-3</h2>
@@ -97,7 +173,7 @@
         </div>
     </div>
     <button id="submit-overall" class="submit-overall">Calculate Overall CGPA</button>
-    <div id="result"></div>
+    <div id="result"></div> -->
     <script src="year2.js"></script>
 </body>
 </html>

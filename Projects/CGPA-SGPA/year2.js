@@ -14,27 +14,29 @@ const gradePoints = {
 };
 
 const subjectCredits = {
-    math1: 4,         
-    chemistry: 4,
-    hv: 2,           
-    pps: 2, 
-    bee: 2, 
-    ecLab: 1,  
-    hvLab: 1,  
-    cpLab: 1.5,  
-    beeLab: 1,  
-    caeg: 1.5, 
+    AEM: 3,         
+    TC: 2,
+    DE: 3,           
+    DSA: 3, 
+    OOP: 3, 
+    SE: 3,  
+    DSALab: 1.5,  
+    OOPLab: 1.5,  
+    SELab: 1.5,  
+    DELab: 1.5,  
+    IT: 1, 
     sodeca1: 0.5, 
-    math2: 4,        
-    physics: 4,    
-    cs: 2,           
-    bme: 2, 
-    bce: 2, 
-    epLab: 1,  
-    lLab: 1,        
-    mpw: 1.5,   
-    bceLab: 1,  
-    camd: 1.5, 
+    DMA: 3,        
+    MEFA: 2,    
+    TOC: 3,           
+    DBMS: 3, 
+    MPI: 3, 
+    DCCN: 3,  
+    MPILab: 1,        
+    DBMSLab: 1.5,   
+    NPLab: 1.5,  
+    LSPLab: 1,  
+    JAVALab: 1, 
     sodeca2: 0.5  
 };
 
@@ -60,16 +62,16 @@ function calculateCGPA(grades) {
 
 document.getElementById('submit-sem1').addEventListener('click', function() {
     const gradesSem1 = {
-        math1: document.getElementById('math1').value,
-        chemistry: document.getElementById('chemistry').value,
-        hv: document.getElementById('hv').value,
-        pps: document.getElementById('pps').value,
-        bee: document.getElementById('bee').value,
-        ecLab: document.getElementById('ec-lab').value,
-        hvLab: document.getElementById('hv-lab').value,
-        cpLab: document.getElementById('cp-lab').value,
-        beeLab: document.getElementById('bee-lab').value,
-        caeg: document.getElementById('caeg').value,
+        AEM: document.getElementById('AEM').value,
+        TC: document.getElementById('TC').value,
+        DE: document.getElementById('DE').value,
+        DSA: document.getElementById('DSA').value,
+        OOP: document.getElementById('OOP').value,
+        SE: document.getElementById('SE').value,
+        DSALab: document.getElementById('DSA-lab').value,
+        OOPLab: document.getElementById('OOP-lab').value,
+        DELab: document.getElementById('DE-lab').value,
+        IT: document.getElementById('IT').value,
         sodeca1: document.getElementById('sodeca1').value
     };
     const cgpa = calculateCGPA(gradesSem1);
@@ -78,16 +80,18 @@ document.getElementById('submit-sem1').addEventListener('click', function() {
 
 document.getElementById('submit-sem2').addEventListener('click', function() {
     const gradesSem2 = {
-        math2: document.getElementById('math2').value,
-        physics: document.getElementById('physics').value,
-        cs: document.getElementById('cs').value,
-        bme: document.getElementById('bme').value,
-        bce: document.getElementById('bce').value,
-        epLab: document.getElementById('ep-lab').value,
-        lLab: document.getElementById('l-lab').value,
-        mpw: document.getElementById('mpw').value,
-        bceLab: document.getElementById('bce-lab').value,
-        camd: document.getElementById('camd').value,
+        DMA: document.getElementById('DMA').value,
+        MEFA: document.getElementById('MEFA').value,
+        TOC: document.getElementById('TOC').value,
+        DBMS: document.getElementById('DBMS').value,
+        MPI: document.getElementById('MPI').value,
+        DCCN: document.getElementById('DCCN').value,
+        MPILab: document.getElementById('MPI-lab').value,
+        DBMSLab: document.getElementById('DBMS-lab').value,
+        NPLab: document.getElementById('NP-lab').value,
+        LSPLab: document.getElementById('LSP-lab').value,
+        JAVALab: document.getElementById('JAVA-lab').value,
+        
         sodeca2: document.getElementById('sodeca2').value
     };
     const cgpa = calculateCGPA(gradesSem2);

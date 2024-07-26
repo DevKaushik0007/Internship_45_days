@@ -51,6 +51,26 @@ const productcontroller = async (req, res) => {
         else if(req.path.includes("/lowtohigh")){
             products = await productCollection.find().sort({new_price:1})
         }
+        // else if(req.path.includes("/avgRating")){
+        //     products = await productCollection.aggregate([{
+        //         $group:{
+        //             _id:null,
+        //             avgRating:{$avg:"$rating"},
+        //         }},
+        //         {
+        //             $addFields: {
+        //                 avgRating: "$avgRating"
+        //             }
+        //         },
+        //         {
+        //             $match: {
+        //                 $expr: {
+        //                     $gt: ["$rating", "$avgRating"]
+        //                 }
+        //             }
+        //     }
+        //     ]);
+        // } 
         else {
             products = await productCollection.find();
         }

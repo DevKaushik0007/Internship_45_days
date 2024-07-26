@@ -12,4 +12,5 @@ router.get("/lowtohigh", getproductController);
 router.get("/category/:category/lowtohigh", getproductController);
 router.get("/category/:category/hightolow", getproductController);
 router.get("/hightolow", getproductController);
+router.get("/avgRating", getproductController);
 module.exports = router;
