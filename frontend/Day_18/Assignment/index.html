@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="left">
+    <div class="nav">
+        <button class="menu-toggle">
+            <i class="fa fa-bars"></i> <!-- Triple-line icon -->
+        </button>
+        <ul class="nav-links">
+            <li id="logo">LOGO</li>
+            <li class="links">Shirts</li>
+            <li class="links">Dresses</li>
+            <li class="links">Jackets</li>
+            <li class="links">Gymwear</li>
+            <li class="links">Gymwear</li>
+            <li class="links">Shoes</li>
+        </ul>
+        <ul class="lower">
+            <li>Contact</li>
+            <li>Newsletter</li>
+            <li>Subscribe</li>
+        </ul>
+
+    </div>
+</div>
+
+    <div class="right">
+        <div class="right-nav">
+            <p>Jeans</p>
+            <p>
+                <i>fgd</i>
+                <i>gdgf</i>
+            </p>
+
+        </div>
+        <div class="container">
+            <img src="https://www.w3schools.com/w3images/jeans.jpg" alt="Image">
+            <div class="text">
+                <p id="first">New arrivals</p>
+                <p id="second">COLLECTION 2016 </p> <button>SHOP NOW</button>
+            </div>
+        </div>
+        <section>
+            8 items
+        </section>
+        <div class="sec1">
+            <!-- <div class="items-image"> -->
+                <div class="img">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <p>Ripped Skinny Jeans<br>$24.99</p>
+                </div>
+                <div class="img">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <p>Ripped Skinny Jeans<br>$24.99</p>
+                </div>
+                <div class="img">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <p>Ripped Skinny Jeans<br>$24.99</p>
+                </div>
+                <div class="img">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <p>Ripped Skinny Jeans<br>$24.99</p>
+                </div>
+            <!-- </div> -->
+            <!-- <div class="items-image"> -->
+                <div class="img">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <p>Ripped Skinny Jeans<br>$24.99</p>
+                </div>
+                <div class="img">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <p>Ripped Skinny Jeans<br>$24.99</p>
+                </div>
+                <div class="img">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <p>Ripped Skinny Jeans<br>$24.99</p>
+                </div>
+                <div class="img">
+                    <img src="https://www.w3schools.com/w3images/jeans1.jpg" alt="">
+                    <p>Ripped Skinny Jeans<br>$24.99</p>
+                </div>
+            <!-- </div> -->
+        </div>
+        <div class="box">
+            <p>Subscribe </p>
+                <span>To get special offers and VIP treatment:</span> <br>
+                <input type="text" placeholder="Enter e-mail"><br>
+                <button>Subscribe</button>
+        </div>
+        <div class="last">
+            <div class="contact">
+                <p class="head">Contact</p>
+                <p>Questions? Go ahead.</p>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Subject">
+                <input type="text" placeholder="Message">
+                <button>Submit</button>
+            </div>
+            <div class="about">
+                <p class="head">About</p>
+                <a href="About">About us</a>
+                <a href="About">We're hiring</a>
+                <a href="About">Support</a>
+                <a href="About">Find store</a>
+                <a href="About">Shipment</a>
+                <a href="About">Payment</a>
+                <a href="About">Gift card</a>
+                <a href="About">Return</a>
+                <a href="About">Help</a>
+               
+            </div>
+            <div class="store">
+                <p class="head">Store</p>
+                <p> <i class="fa-solid fa-location-dot"></i> Company Name</p>
+                <p> <i class="fa-solid fa-phone"></i> 0044123123</p>
+                <p> <i class="fa-solid fa-envelope"></i> ex@mail.com</p>
+                <p class="head">We accept</p>
+                <p> <i class="fa-brands fa-cc-amex"></i> Amex</p>
+                <p> <i class="fa-solid fa-credit-card"></i> Credit Card</p>
+                <p class="icons"><i class="fa-brands fa-square-facebook"></i> <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-square-snapchat"></i> <i class="fa-brands fa-pinterest-p"></i> <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-linkedin"></i> </p>
+            </div>
+        </div>
+        <div class="footer">
+            Powerd by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+        </div>
+    </div>
+    <script>
+        // JavaScript to toggle the menu
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

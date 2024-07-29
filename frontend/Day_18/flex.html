@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+    }
+
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .box {
+       
+        width: 25%;
+        min-width: 350px;
+        /* min-height: 617px; */
+        /* border: 2px solid rgba(128, 128, 128, 0.31); */
+        border-radius: 15px;
+        box-shadow: 0px 0px 5px black;
+    }
+
+    .mid{
+        
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .upper {
+        background-color: blue;
+        height: 150px;
+        /* position: relative; */
+        display: flex;
+        justify-content: center;
+        /* border-radius: 15px; */
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        
+    }
+
+    img {
+        position: absolute;
+        border: 3px solid blue;
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        top: -100px;
+        background-color: #fff;
+
+    }
+    .lower{
+       
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    button{
+        padding: 10px 20px;
+        height: auto;
+        margin-top: 40px;
+        border-radius: 15px;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        border: none;
+    }
+    p{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 30px;
+
+
+    }
+    .fa-linkedin-in{
+        font-size: 25px;
+        color: blue;
+       
+    }
+    .fa-github{
+        font-size: 25px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .fa-envelope{
+        font-size: 25px;
+        color: red;
+    }
+    
+</style>
+
+<body>      
+    <div class="card">
+        <div class="box">
+            <div class="upper">
+            </div>
+            <div class="mid">
+                <img src="./image.png" alt="profile pic">
+            </div>
+            <div class="lower">
+                <h1>Dev Kaushik</h1>
+                <p>Frontend-developer</p>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-github"></i> 
+                <i class="fa-regular fa-envelope"></i><br>
+                <button>Message</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
