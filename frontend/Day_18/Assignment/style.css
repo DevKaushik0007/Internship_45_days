@@ -23,11 +23,15 @@ body{
     list-style-type: none;
     padding: 0;
     margin: 0;
+    cursor: pointer;
 }
 .nav ul #logo{
     padding-top: 20px;
     padding-bottom: 100px;
     font-size: 40px;
+}
+i{
+    cursor: pointer;
 }
 .nav ul .links{
 padding-top: 20px;
@@ -35,7 +39,7 @@ font-size: 30px;
 }
 .lower{
     padding-top: 180px;
-    bottom: 0px;
+    padding-bottom: 80px;
 }
 .lower li{
     padding-top: 20px;
@@ -63,11 +67,16 @@ font-size: 30px;
 .right-nav{
     display: flex;
     right: 0;
-    justify-content: space-around;
+    /* left: 0; */
+    justify-content: space-between;
     /* background-color: black; */
     color: black;
-    font-size: 20px;
+    font-size: 24px;
     padding: 30px 0px;
+
+}
+.right-nav i{
+    padding-left: 20px;
 }
 .container {
     position: relative;
