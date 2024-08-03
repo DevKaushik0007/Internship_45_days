@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            place-content: center;
+            background-color: #191825;
+            font-family: "Urbanist", sans-serif;
+        }
+        .text{
+            font-size: 100px;
+            text-transform: uppercase;
+            position: relative;
+            color: white;
+            letter-spacing: 5px;
+            font-weight: bolder;
+        }
+        .text::before{
+            content: "Dev\00a0\Kaushik...";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            border-right: 10px solid yellow;
+            color: yellow;
+            animation: clr-change 3s linear infinite alternate;
+            overflow: hidden;
+        }
+        @keyframes clr-change{
+            0%{
+                width:0%
+            }
+            50%{
+                width: 100%;
+            }
+            100%{
+                width: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="text">
+        Dev kaushik...
+    </div>
+</body>
+</html>
