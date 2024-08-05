@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cmn-btn{
+            padding: 20px 40px;
+            font-size: 42px;
+            border: 2px solid violet;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body id="bo">
+    <button class="cmn-btn" id="red">Red</button>
+    <button class="cmn-btn"id="black">black</button>
+    <button class="cmn-btn"id="green">green</button>
+    <button class="cmn-btn id="date">Date</button>
+    <h1 id="h1"></h1>
+
+
+    <script>
+        document.getElementById("red").onclick = function(){
+            document.getElementById("bo").style.backgroundColor = "red";
+        }
+        document.getElementById("black").onclick = function(){
+            document.getElementById("bo").style.backgroundColor = "black";
+        }
+        document.getElementById("green").onclick = function(){
+            document.getElementById("bo").style.backgroundColor = "green";
+        }
+        document.getElementById("date").onclick = function(){
+            let date =new Date();
+            document.getElementById("h1").innerHTML = date;
+        }
+    </script>
+</body>
+</html>

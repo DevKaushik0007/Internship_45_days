@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text"  class="input" placeholder="enter your name"> <br><br>
+    <input type="email"  class="input" name="" id="" placeholder="enter your email"> <br><br>
+    <input type="number" class="input"  name="" id="" placeholder="enter your mobile number"> <br><br>
+    <input type="password"  class="input" name="" id="" placeholder="enter your password"> <br><br>
+    <button id="btn">Submit</button>
+
+    <script>
+        document.getElementById("btn").onclick = function(){
+            let data = document.getElementsByClassName("input");
+            for(let i of data){
+                console.log(i.value);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <input type="text" placeholder="Enter your first number" id="input1"><br>
+    <input type="text" placeholder="Enter your second number" id="input2">
+    <!-- <button id="Submit">Submit</button> -->
+     <select name="" id="calculator">
+        <option value="">None</option>
+        <option value="add">Add</option>
+        <option value="sub">Sub</option>
+        <option value="mul">mul</option>
+        <option value="div">Div</option>
+     </select>
+
+
+    <script>
+        // document.getElementById("Submit").onclick = function(){
+        //     let input = document.getElementById("input").value;
+        //     console.log(input);
+        // }
+
+        document.getElementById("calculator").onclick = function(){
+            let input1 = Number(document.getElementById("input1").value);
+            let input2 = Number(document.getElementById("input2").value);
+            let data = document.getElementById("calculator").value;
+            if(data=="add"){
+                console.log(input1+input2);
+            }
+            else if(data=="sub"){
+                console.log(input1-input2);
+            }
+            else if(data=="mul"){
+                console.log(input1*input2);
+            }
+            else if(data=="div"){
+                console.log(input1/input2);
+            }
+            else{
+                console.log("select proper option");
+            }
+            // let result;
+            // switch(calculator){
+            //     case 'add':
+            //         result = input1 + input2;
+            //         break;
+            //     case 'sub':
+            //         result = input1 - input2;
+            //         break;
+            //     case 'mul':
+            //         result = input1 * input2;
+            //         break;
+            //     case 'div':
+            //         result = input1 / input2;
+            //         break;
+            //     default:
+            //         result = 'give input';
+            // }
+            // input1 = Number(input1);
+            // input2 = Number(input2);
+            // console.log(result);
+        }
+        </script>
+</body>
+</html>

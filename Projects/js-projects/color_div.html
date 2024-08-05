@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color div</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box-container{
+            display: grid;
+            place-items: center;
+            height: 100vh; 
+        }
+        input{
+            padding: 10px 20px;
+            border: 2px solid grey;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .upper{
+            padding: 50px 0px;
+        }
+        #btn{
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            background-color: #6470ED;
+        }
+        #btn:hover{
+            background-color: #6496ED;
+        }
+        .main-box{
+            display: grid;
+            place-items: center;
+            width: 80vw;
+            border: 2px solid black;
+        }
+        .box-div{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 25px 0px 50px 0px;
+        }
+        .box{
+            display: grid;
+            height: 200px;
+            width: 200px;
+            border-radius: 12px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <div class="main-box">
+            <div class="upper">
+            <input id="inp1" type="text" placeholder="color name">
+            <input id="inp2" type="text" placeholder="select div">
+            <button id="btn">Submit</button>
+        </div>
+            <div class="box-div">
+                <div class="box" id="box1"></div>
+                <div class="box" id="box2"></div>
+                <div class="box" id="box3"></div>
+                <div class="box" id="box4"></div>
+                <div class="box" id="box5"></div>
+                <div class="box" id="box6"></div>
+                <div class="box" id="box7"></div>
+                <div class="box" id="box8"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function color_changer(){
+            let color_name = document.getElementById("inp1").value
+            let div_number = Number(document.getElementById("inp2").value)
+            let box_id = "box" + div_number;
+            document.getElementById(box_id).style.backgroundColor = color_name;
+        }
+        
+        document.getElementById("btn").onclick = color_changer();
+
+        document.onkeypress = function(event){
+            if(event.key === "Enter"){
+            color_changer();
+            }
+        }
+    </script>
+
+</body>
+</html>
