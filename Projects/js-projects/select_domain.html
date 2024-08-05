@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            place-items: center;
+            padding-top: 50px;
+            background-color: black;
+        }
+        .container{
+            min-height: 40vh;
+            width: 50vw;
+            border: none;
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            /* overflow: auto; */
+        }
+        .btn{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            border: none;
+            margin-left: 5px;
+        }
+        .btn:nth-of-type(1){
+            background-color: red;
+        }
+        .btn:nth-of-type(2){
+            background-color: yellow;
+        }
+        .btn:nth-of-type(3){
+            background-color: green;
+        }
+        .btn:nth-of-type(4){
+            background-color: blue;
+        }
+        .btn:nth-of-type(5){
+            background-color: black;
+        }
+        .lower{
+            padding: 10px 20px;
+            margin:10px 5px 0 0;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 10px;
+        }
+        .btn-box{
+            padding-top: 20px;
+        }
+        h1{
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body id="body" >
+    <div class="container">
+        <h1>Select Your Domain:</h1>
+        <input type="text" placeholder="--Make a choice--" disabled>
+        <select name="" id="se">
+            <option value="">None</option>
+            <option value="React">React</option>
+            <option value="js">js</option>
+            <option value="react">react</option>
+            <option value="react">react</option>
+        </select>
+        <div class="btn-box">
+            <button class="btn" id="red" ></button><button class="btn" id="yellow" ></button><button class="btn" id="green" ></button><button class="btn" id="blue" ></button><button class="btn" id="black" ></button>
+        </div>
+        <p id="para"></p>
+        
+        <button class="lower" id="upper">Upper</button><button class="lower" id="lower">Lower</button><button class="lower" id="inc">+</button><button class="lower" id="dec">-</button>
+    </div>
+    
+    
+    <script>
+        document.getElementById("red").onclick = function(){
+            document.getElementById("body").style.backgroundColor = "red";
+        }
+        document.getElementById("yellow").onclick = function(){
+            document.getElementById("body").style.backgroundColor = "yellow";
+        }
+        document.getElementById("green").onclick = function(){
+            document.getElementById("body").style.backgroundColor = "green";
+        }
+        document.getElementById("blue").onclick = function(){
+            document.getElementById("body").style.backgroundColor = "blue";
+        }
+        document.getElementById("black").onclick = function(){
+            document.getElementById("body").style.backgroundColor = "black";
+        }
+        document.getElementById("se").onclick = function(){
+            let input = document.getElementById("se").value
+            if(input === "React"){
+                let React =  `React is the library for web and native user interfaces
+                JavaScript.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore hic aliquid libero molestias vitae animi nulla molestiae dolorum, tenetur sequi! Impedit, quasi earum. Quod rem eum repellat fugiat, ipsum itaque.
+Vero, nemo quis. Autem veniam officiis nemo aliquid quae ratione sunt neque illum nobis quidem amet numquam voluptatibus saepe dolorem quos, quas cumque excepturi atque non enim sed ut necessitatibus.`
+            document.getElementById("para").textContent = React
+        }
+            if(input === "js"){
+                let js =  "JavaScript References. W3Schools maintains a complete JavaScript reference, including all HTML and browser objects. The reference contains examples for all ..."
+            document.getElementById("para").textContent = js
+        }
+        //     if(input === "react"){
+        //         let React =  "React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript."
+        //     document.getElementById("para").textContent = React
+        // }
+        //     if(input === "React"){
+        //         let React =  "React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript."
+        //     document.getElementById("para").textContent = React
+        // }
+        
+        document.getElementById("inc").onclick = function(){
+            document.getElementById("para").style.fontSize = "24px";
+        }
+        document.getElementById("dec").onclick = function(){
+            document.getElementById("para").style.fontSize = "18px";
+        }
+        document.getElementById("upper").onclick = function(){
+            document.getElementById("para").style.textTransform = "uppercase";
+        }
+        document.getElementById("lower").onclick = function(){
+            document.getElementById("para").style.textTransform = "lowercase";
+        }
+    }
+
+    </script>
+</body>
+</html>
