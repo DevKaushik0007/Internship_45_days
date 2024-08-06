@@ -68,7 +68,7 @@
         <h1>Select Your Domain:</h1>
         <input type="text" placeholder="--Make a choice--" disabled>
         <select name="" id="se">
-            <option value="">None</option>
+            <option value="None">None</option>
             <option value="React">React</option>
             <option value="js">js</option>
             <option value="react">react</option>
@@ -102,14 +102,16 @@
         document.getElementById("se").onclick = function(){
             let input = document.getElementById("se").value
             if(input === "React"){
-                let React =  `React is the library for web and native user interfaces
-                JavaScript.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore hic aliquid libero molestias vitae animi nulla molestiae dolorum, tenetur sequi! Impedit, quasi earum. Quod rem eum repellat fugiat, ipsum itaque.
-Vero, nemo quis. Autem veniam officiis nemo aliquid quae ratione sunt neque illum nobis quidem amet numquam voluptatibus saepe dolorem quos, quas cumque excepturi atque non enim sed ut necessitatibus.`
+                let React =  `React is a popular JavaScript library for building user interfaces, particularly single-page applications. Developed by Facebook, it uses a component-based architecture and a virtual DOM for efficient rendering. React's declarative style and powerful state management make it ideal for developing interactive and dynamic web applications.`
             document.getElementById("para").textContent = React
         }
             if(input === "js"){
-                let js =  "JavaScript References. W3Schools maintains a complete JavaScript reference, including all HTML and browser objects. The reference contains examples for all ..."
+                let js =  "JavaScript (JS) is a versatile, high-level programming language primarily used for web development. It enables interactive and dynamic content on websites, such as animations, form validations, and asynchronous data fetching. Supported by all modern browsers, JavaScript is integral to front-end development and can also be used on the server-side with Node.js."
             document.getElementById("para").textContent = js
+        }
+        if(input ==="None"){
+            let None = ""
+            document.getElementById("para").textContent = None;
         }
         //     if(input === "react"){
         //         let React =  "React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript."

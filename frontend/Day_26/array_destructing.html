@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let [name,mobile] = ["Dev","4646464"]
+        // let [name,email,...mobile] = ["Dev","dev@gmail.com",4465,4545,3321,]
+        // let [a="ganesh",b=a] = ["dev","sachin"]
+        // console.log(a);
+        // console.log(b);
+        // console.log(mobile);
+
+
+        // let a =[1,2,3,4]
+        // let b =[5,6,7,8]
+        // // let c = [a,b]
+        // let c = [...a,...b]
+        // console.log(c);
+
+
+        // <!-- ========== Start object-destructing ========== -->
+
+        // let {name,email,age} = {name:"dev",email:"dev@gmail.com",age:25};
+        // console.log(name);
+        // console.log(email);
+        // console.log(age);
+
+
+        // <!-- ========== End object-destructing ========== -->
+
+        
+        //localstorage--
+
+        // localStorage.setItem("name","Dev")
+        // localStorage.setItem("email","dev@gmail.com")
+
+        let obj = {
+            name:"Dev",
+            email:"Dev@gmail.com",
+            mobile:45465465,
+            age:19
+        }
+
+        localStorage.setItem("userdetail",JSON.stringify(obj))
+
+        let b = JSON.parse(localStorage.getItem("userdetail"))
+        console.log(b);
+
+    </script>
+</body>
+</html>

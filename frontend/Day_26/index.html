@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <!-- <input type="color" id="inp"> -->
+     <input type="text" id="inp">
+    <button id="btn" >Search</button>
+    <script>
+    //     document.getElementById("inp").oninput = function(event){
+    //   document.getElementById("body").style.backgroundColor = event.target.value;
+    //     }
+    //     document.getElementById("range").oninput = function(event){
+    //         console.log(event)
+    //   document.getElementById("h1").style.fontSize = event.target.value + "rem";
+    //     }
+    document.getElementById("btn").onclick = function(){
+        let input = document.getElementById("inp").value
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode(`${input}`);
+        newDiv.appendChild(newContent);
+        const currentDiv = document.getElementById("div1");
+  document.body.insertBefore(newDiv, currentDiv);
+    }
+    </script>
+</body>
+</html>
