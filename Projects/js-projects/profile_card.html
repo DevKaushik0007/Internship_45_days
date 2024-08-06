@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="icon" href="./images/img.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Urbanist", sans-serif;
+        }
+        .container{
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+            width: 100vw;
+            gap: 20px;
+            /* border: 2px solid black; */
+            background-color: #ede764;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .left{
+            display: grid;
+            max-width: 50vw;
+            /* border: 2px solid black; */
+            /* place-items: center; */
+        }
+        .form{
+            display: grid;
+            max-width: 50vw;
+            /* border: none; */
+            /* border: 2px solid black; */
+            /* background-color: #ede764; */
+            background-color: #6495ED;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 12px;
+            padding: 50px;
+        }
+        input{
+            padding: 10px 50px;
+            margin: 5px 0px;
+            border-radius: 12px;
+            border: none;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        .right{
+            padding: 50px;
+            /* display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 1fr;
+            
+            gap: 20px;
+            width: 50vw;
+            height: 80vh; */
+            /* border: 2px solid black; */
+            /* background-color: #e59866;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+        }
+        .display{
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 50vw;
+            height: 50vh;
+            /* border: 2px solid black; */
+            background-color: #6495ED;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 12px;
+        }
+        img{
+            border: 4px solid white;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        ul li{
+            padding: 5px 0px;
+            /* padding-right: 0px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="form">
+            <label for="">Image url:</label>
+            <input type="text" name="" id="image">
+            <label for="">Name:</label>
+            <input type="text" id="name">
+            <label for="">Email</label>
+            <input type="email" name="" id="email">
+            <label for="">Course</label>
+            <input type="text" name="" id="course">
+            <label for="">Mobile</label>
+            <input type="text" name="" id="mobile">
+        </div>
+        </div>
+        <div class="right">
+            <div class="display">
+        <div class="left-right">
+            <img src="" alt="image" id="profileimage">
+        </div>
+        <div class="right-right">
+            <ul>
+                <li>Name: <span id="rname"></span></li>
+                <li>Email: <span id="remail"></span></li>
+                <li>Course: <span id="rcourse"></span></li>
+                <li>Mobile: <span id="rmobile"></span></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+
+    //     const inputs = document.querySelectorAll("input");
+
+    //     inputs.forEach((item) => {
+    //     input.addEventListener('input', (event) => {
+    //         const value = event.target.value;
+    //         if (item.id === 'image') {
+    //             document.getElementById("profileimage").src = value;
+    //         }
+    //         if (event.target.value === 'name') {
+    //             document.getElementById("rname").innerText = value;
+    //         }
+    //         if (item.id === 'email') {
+    //             document.getElementById("remail").innerText = value;
+    //         }
+    //         if (item.id === 'course') {
+    //             document.getElementById("rcourse").innerText = value;
+    //         }
+    //         if (item.id === 'mobile') {
+    //             document.getElementById("rmobile").innerText = value;
+    //         }
+    //     }); 
+    // });
+
+
+    let inputs = document.querySelectorAll("input");
+
+inputs.forEach((input) => {
+    input.addEventListener('input', (event) => {
+        let value = event.target.value;
+        console.log(`Input ID: ${event.target.id}, Value: ${value}`);
+        switch (event.target.id) {
+            case 'image':
+                document.getElementById("profileimage").src = value;
+                break;
+            case 'name':
+                document.getElementById("rname").innerText = value;
+                break;
+            case 'email':
+                document.getElementById("remail").innerText = value;
+                break;
+            case 'course':
+                document.getElementById("rcourse").innerText = value;
+                break;
+            case 'mobile':
+                document.getElementById("rmobile").innerText = value;
+                break;
+        }
+    });
+});
+
+        // // let inputimg = document.getElementById("img");
+        // let input = document.querySelectorAll("input");
+        // input.forEach((item)=>{
+        //     document.getElementById("profileimage").src = item.value;
+        //     document.getElementById("rname").innerText = item.value;
+        // })
+        // // let inputname = document.getElementById("name");
+        // // let inputemail = document.getElementById("email");
+        // // let inputcourse = document.getElementById("course");
+        // // let inputobile = document.getElementById("mobile");
+
+        // // let displayimg = document.getElementById("profileimage");
+        // // let displayname = document.getElementById("rname");
+        // // let displayemail = document.getElementById("remail");
+        // // let displaycourse = document.getElementById("rcourse");
+        // // let displaymobile = document.getElementById("rmobile");
+        
+        // // inputimg.addEventListener('input',()=>{
+        // //     displayimg.src = inputimg.value;
+        // // })
+        // // inputname.addEventListener('input',()=>{
+        // //     displayname.innerText = inputname.value;
+        // // })
+    </script>
+
+</body>
+</html>

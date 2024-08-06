@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Todo List</h1>
+    <input type="text" id="inp">
+    <button id="btn">Add</button>
+
+    <script>
+         document.getElementById("btn").onclick = ()=>{
+    let input = document.querySelectorAll("inp");
+    // console.log(input);
+    let p = document.createElement("p");
+    input.forEach((item)=>{
+        let td = document.createElement("button");
+        td.innerHTML = item.value;
+        p.append(td);
+        
+    })
+    document.body.append(p);
+ }
+    </script>
+
+
+</body>
+</html>
