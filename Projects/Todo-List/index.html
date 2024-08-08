@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            /* display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid violet;
+            height: auto; */
+            /* width: 20rem; */
+        }
+        .dft{
+        }
+        button{
+            /* height: 5rem; */
+        }
+        .container{
+            width: 36rem;
+            display: grid;
+            display: grid;
+            grid-template-columns: 1fr .3fr;
+            align-items: center;
+            height: auto;
+
+        }
+        .heroContainer li{
+            /* display: flex; */
+            /* align-items: center; */
+            list-style: circle;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- <li></li> -->
+     <div class="dft">
+    <input type="text" id="inp">
+    <button id="btn">Add In List</button>
+    <section class="heroContainer"></section>
+</div>
+
+    <script>
+        const inputVal = document.getElementById("inp")
+        const mainContainer = document.querySelector(".heroContainer")
+        
+        
+        let getDataFromLocal = ()=>{
+            return JSON.parse(localStorage.getItem("userData"))
+        }
+        let localList = getDataFromLocal() || [];
+
+        const makeDynamicDiv = (item)=>{
+            let content = document.createElement('div');
+                content.classList.add("container");
+                content.innerHTML = `<li>${item}</li> <button class="delete">Delete</button>`
+                mainContainer.append(content);
+        }
+
+        const dataShow = ()=>{
+                const userVal = inputVal.value.trim();
+                inputVal.value = "";
+                if(userVal == ""){
+                    alert("Please Give a Input")
+                }
+                if(localList.includes(userVal)){
+                    alert("Can't Take Same Input")
+                }
+                if(userVal !== "" &&!localList.includes(userVal)){
+                localList.push(userVal)
+                localList = [...new Set(localList)]
+                // console.log(userVal);
+                localStorage.setItem("userData",JSON.stringify(localList));
+                console.log(inputVal.value);
+               makeDynamicDiv(userVal)
+                }
+            }
+            const showData = ()=>{
+                console.log(localList);
+                localList.forEach((item)=>{
+                    makeDynamicDiv(item);
+                })
+            }
+            showData();
+        
+        document.getElementById("btn").addEventListener("click",()=>{
+            dataShow();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Image</th>
+        </tr>
+    </table>
+    <script>
+        // let table = document.createElement('table');
+        // let tr1 = document.createElement('tr');
+        // let Id = document.createElement('th');
+        // let USERNAME = document.createElement('th');
+        // let EMAIL = document.createElement('th');
+        // let AGE = document.createElement('th');
+        // let ADDRESS = document.createElement('th');
+        // let PHONE = document.createElement('th');
+        // let IMAGE = document.createElement('th');
+        // Id.innerHTML = "ID"
+        // USERNAME.innerHTML = "USERNAME"
+        // EMAIL.innerHTML = "EMAIL"
+        // AGE.innerHTML = "AGE"
+        // ADDRESS.innerHTML = "ADDRESS"
+        // PHONE.innerHTML = "PHONE"
+        // tr1.append(Id)
+        // tr1.append(USERNAME)
+        // tr1.append(EMAIL)
+        // tr1.append(AGE)
+        // tr1.append(ADDRESS)
+        // tr1.append(PHONE)
+        // tr1.append(IMAGE)
+        // table.append(tr1)
+        // document.querySelector("body").append(table);
+        async function fetchData(){
+            let API = await fetch('https://dummyjson.com/users');
+            let JSON_DATA = await API.json();
+            JSON_DATA.users.forEach((item)=>{
+                console.log(item);
+                
+                let tr = document.createElement('tr');
+                let id = document.createElement('td');
+                let username = document.createElement('td');
+                let email = document.createElement('td');
+                let age = document.createElement('td');
+                let phone = document.createElement('td');
+                let address = document.createElement('td');
+                let image = document.createElement('td');
+                let image1 = document.createElement('img');
+
+                id.innerHTML = item.id;
+                username.innerHTML = item.username;
+                email.innerHTML = item.email;
+                age.innerHTML = item.age;
+                phone.innerHTML = item.phone;
+                address.innerHTML = item.address.city;
+                image1.src = item.image;
+
+
+                // tr.style.border = '2px solid black';
+                image.append(image1)
+                tr.append(id)
+                tr.append(username)
+                tr.append(email)
+                tr.append(age)
+                tr.append(phone)
+                tr.append(address)
+                tr.append(image1)
+                
+                // table.append(tr)
+                document.querySelector("table").append(tr);
+            })
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Data and Display in Table</title>
+    <style>
+        /* table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        } */
+         table{
+            border: 2px solid black;
+         }
+    </style>
+</head>
+<body>
+    <h1>User Data</h1>
+    <div id="table-container"></div>
+
+    <script>
+        async function fetchData() {
+            try {
+                let response = await fetch('https://dummyjson.com/users');
+                let data = await response.json();
+
+                // Create the table and its elements
+                let table = document.createElement('table');
+                let thead = document.createElement('thead');
+                let tbody = document.createElement('tbody');
+                
+                // Append the thead and tbody to the table
+                table.appendChild(thead);
+                table.appendChild(tbody);
+
+                // Append the table to the container div
+                document.getElementById('table-container').appendChild(table);
+
+                // Create the table headers
+                let headers = ['ID', 'First Name', 'Last Name', 'Email', 'age'];
+                let headerRow = document.createElement('tr');
+                headers.forEach(headerText => {
+                    let header = document.createElement('th');
+                    header.textContent = headerText;
+                    headerRow.appendChild(header);
+                });
+                thead.appendChild(headerRow);
+
+                // Add rows for each user
+                data.users.forEach(user => {
+                    let row = document.createElement('tr');
+                    
+                    let idCell = document.createElement('td');
+                    idCell.textContent = user.id;
+                    row.appendChild(idCell);
+                    
+                    let firstNameCell = document.createElement('td');
+                    firstNameCell.textContent = user.firstName;
+                    row.appendChild(firstNameCell);
+                    
+                    let lastNameCell = document.createElement('td');
+                    lastNameCell.textContent = user.lastName;
+                    row.appendChild(lastNameCell);
+                    
+                    let emailCell = document.createElement('td');
+                    emailCell.textContent = user.email;
+                    row.appendChild(emailCell);
+                    let ageCell = document.createElement('td');
+                    ageCell.textContent = user.age;
+                    row.appendChild(ageCell);
+                    
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+        
+        fetchData();
+    </script>
+</body>
+</html> -->
