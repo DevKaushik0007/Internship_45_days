@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopWatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Kalnia+Glaze:wght@100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Doodle+Shadow&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Urbanist", sans-serif;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #timer{
+            display: flex;
+            font-size: 100px;
+            font-weight: 900;
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background-color: #6495ed;
+            color: white;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            height: 80vh;
+            /* min-width: 369px; */
+            width: 40vw;
+            background-color: #f7f9f9;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+        .buttons{
+            padding-top: 50px;
+        }
+        .btn{
+            padding: 15px 40px;
+            margin: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+            font-size: 24px;
+            font-weight: 800;
+            background-color: #eb984e;
+            color: white;
+        }
+        .btn:hover{
+            background-color: #f0b27a;
+        }
+        @media (max-width:550px){
+        .box{
+                width: 60vw;
+        }
+        .buttons{
+            text-align: center;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+       <p id="timer">0</p>
+        <div class="buttons">
+            <button class="btn" id="start">Start</button>
+            <button class="btn" id="stop">Stop</button>
+            <button class="btn" id="reset">Reset</button>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        const timer = document.getElementById('timer')
+
+        let counter = 0;
+        let timerValue;
+        const startTimer = ()=>{
+            timerValue = setInterval((startTimer)=>{
+                timer.innerText = ++counter;
+            },1000)
+        }
+        
+        const stopTimer = ()=>{
+            clearInterval(timerValue);
+        }
+
+        const resetTimer = ()=>{
+            counter = 0;
+            timer.innerText = counter;
+            stopTimer();
+        }
+        document.getElementById('start').addEventListener('click',startTimer)
+        document.getElementById('stop').addEventListener('click',stopTimer)
+        document.getElementById('reset').addEventListener('click',resetTimer)
+    </script>
+</body>
+</html>

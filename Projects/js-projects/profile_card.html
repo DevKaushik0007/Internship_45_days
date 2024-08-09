@@ -31,12 +31,12 @@
         .left{
             display: grid;
             max-width: 50vw;
-            /* border: 2px solid black; */
+            border: 2px solid black;
             /* place-items: center; */
         }
         .form{
             display: grid;
-            max-width: 50vw;
+            /* max-width: 50vw; */
             /* border: none; */
             /* border: 2px solid black; */
             /* background-color: #ede764; */
@@ -83,6 +83,7 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
+            padding: 10px;
             background-color: white;
         }
         ul li{
@@ -119,12 +120,30 @@
                 <li>Course: <span id="rcourse"></span></li>
                 <li>Mobile: <span id="rmobile"></span></li>
             </ul>
+            <!-- <p id="p">Name is: </p> -->
         </div>
         </div>
     </div>
     </div>
 
     <script>
+
+        // const img = document.getElementById("image");
+        // const name = document.getElementById("name");
+        // const mail = document.getElementById("email");
+        // const course = document.getElementById("course");
+        // const mbl = document.getElementById("mobile");
+
+        // const display = (event)=>{
+        //     console.log(event);
+        //     let value = event.target.value;
+        //     document.querySelector("#profileimage").src = event.target.value
+        //     document.querySelector("#p").textContent = `Name is: ${event.target.value}`
+        //     document.querySelector("#p").textContent = `Name is: ${event.target.value}`
+        //     document.querySelector("#p").textContent = `Name is: ${event.target.value}`
+        //     document.querySelector("#p").textContent = `Name is: ${event.target.value}`
+        // }
+        // inputVal.addEventListener("input",display);
 
     //     const inputs = document.querySelectorAll("input");
 
@@ -175,6 +194,7 @@ inputs.forEach((input) => {
         }
     });
 });
+        
 
         // // let inputimg = document.getElementById("img");
         // let input = document.querySelectorAll("input");
