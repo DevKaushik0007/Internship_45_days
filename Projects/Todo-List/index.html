@@ -18,17 +18,22 @@
             height: auto; */
             /* width: 20rem; */
         }
-        .dft{
+        input{
+            margin: 10px;
+            padding: 15px 50px;
         }
         button{
-            /* height: 5rem; */
+            padding: 10px 20px;
+            margin-left: 20px;
         }
         .container{
             width: 36rem;
-            display: grid;
+            margin: 20px;
+            font-size: 24px;
+            /* display: grid;
             display: grid;
             grid-template-columns: 1fr .3fr;
-            align-items: center;
+            align-items: center; */
             height: auto;
 
         }
@@ -61,7 +66,7 @@
         const makeDynamicDiv = (item)=>{
             let content = document.createElement('div');
                 content.classList.add("container");
-                content.innerHTML = `<li>${item}</li> <button class="delete">Delete</button>`
+                content.innerHTML = `<li>${item}</li> <button class="delete">Delete</button><button class="complete">Complete</button>`
                 mainContainer.append(content);
         }
 
@@ -90,7 +95,13 @@
                 })
             }
             showData();
+
+            const removeData = ()=>{
+                // mainContainer.innerHTML=''
+            }
         
+            mainContainer.addEventListener('click',removeData);
+
         document.getElementById("btn").addEventListener("click",()=>{
             dataShow();
         })
