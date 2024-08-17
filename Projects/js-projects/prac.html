@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <p id="p">Name is:</p>
+    <script>
+        
+        const inputVal = document.getElementById("inp");
+
+        const display = (event)=>{
+            console.log("name is:",event.target.value);
+            document.querySelector("#p").textContent = `Name is: ${event.target.value}`
+        }
+        inputVal.addEventListener("input",display);
+    </script>
+</body>
+</html>
